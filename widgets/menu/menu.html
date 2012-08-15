@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html ng-app="widgets" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>menu</title>
+		<meta name="author" content="jeff" />
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<!-- Date: 2012-08-15 -->
+	</head>
+	<body ng-controller="MainCtrl">
+		<menu menudata="menus"></menu>
+		<script src="../../js/jquery-1.8.0.min.js"></script>
+		<script src="../../js/angular-1.0.1.js"></script>
+		<script src="js/menu_directive.js"></script>
+		<script>
+			
+			function MainCtrl($scope){
+				var menudata=[
+							{"name":"menu01",
+							 "subMenu":[
+							 	{"name":"subMenu01",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu01","url":"url001"},
+							 		{"name":"thirdMenu02","url":"url002"},
+							 		{"name":"thirdMenu03","url":"url003"},
+							 		{"name":"thirdMenu04","url":"url004"}
+							 		]
+							 	}
+							 ]
+							},
+							{"name":"menu02",
+							 "subMenu":[
+							 	{"name":"subMenu01",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu01","url":"url001"},
+							 		{"name":"thirdMenu02","url":"url002"},
+							 		{"name":"thirdMenu03","url":"url003"},
+							 		{"name":"thirdMenu04","url":"url004"}
+							 		]
+							 	},
+							 	{"name":"subMenu02",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu05","url":"url001"},
+							 		{"name":"thirdMenu06","url":"url002"},
+							 		{"name":"thirdMenu07","url":"url003"},
+							 		{"name":"thirdMenu08","url":"url004"}
+							 		]
+							 	},
+							 	{"name":"subMenu03",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu09","url":"url001"},
+							 		{"name":"thirdMenu10","url":"url002"},
+							 		{"name":"thirdMenu11","url":"url003"},
+							 		{"name":"thirdMenu12","url":"url004"}
+							 		]
+							 	},
+							 	{"name":"subMenu04",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu01","url":"url001"},
+							 		{"name":"thirdMenu02","url":"url002"},
+							 		{"name":"thirdMenu03","url":"url003"},
+							 		{"name":"thirdMenu04","url":"url004"}
+							 		]
+							 	}
+							 ]
+							},
+							{"name":"menu03",
+							 "subMenu":[
+							 	{"name":"subMenu01",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu01","url":"url001"},
+							 		{"name":"thirdMenu02","url":"url002"},
+							 		{"name":"thirdMenu03","url":"url003"},
+							 		{"name":"thirdMenu04","url":"url004"}
+							 		]
+							 	},
+							 	{"name":"subMenu02",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu05","url":"url001"},
+							 		{"name":"thirdMenu06","url":"url002"},
+							 		{"name":"thirdMenu07","url":"url003"},
+							 		{"name":"thirdMenu08","url":"url004"}
+							 		]
+							 	}
+							 ]
+							},
+							{"name":"menu04",
+							 "subMenu":[
+							 	{"name":"subMenu01",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu01","url":"url001"},
+							 		{"name":"thirdMenu02","url":"url002"},
+							 		{"name":"thirdMenu03","url":"url003"},
+							 		{"name":"thirdMenu04","url":"url004"}
+							 		]
+							 	},
+							 	{"name":"subMenu02",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu05","url":"url001"},
+							 		{"name":"thirdMenu06","url":"url002"},
+							 		{"name":"thirdMenu07","url":"url003"},
+							 		{"name":"thirdMenu08","url":"url004"}
+							 		]
+							 	},
+							 	{"name":"subMenu03",
+							 	 "thirdMenu":[
+							 		{"name":"thirdMenu09","url":"url001"},
+							 		{"name":"thirdMenu10","url":"url002"},
+							 		{"name":"thirdMenu11","url":"url003"},
+							 		{"name":"thirdMenu12","url":"url004"}
+							 		]
+							 	}
+							 ]
+							}
+							
+						];
+				$scope.menus=menudata;
+			}
+		</script>
+	</body>
+</html>

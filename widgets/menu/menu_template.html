@@ -1,0 +1,15 @@
+<div class="nav_menu" id="navMenu">
+	<ul>
+		<li ng-repeat="menu in menudata">
+			<a href="#/{{menu.url}}">{{menu.name}}</a>
+			<div class="menu_pop_box">
+				<ul ng-repeat="subMenu in menu.subMenu" class="menu_silde">
+					<h4>{{subMenu.name}}</h3>
+					<li ng-repeat="thirdMenu in subMenu.thirdMenu">
+						<a href="#{{thirdMenu.url}}">{{thirdMenu.name}}</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>
