@@ -10,7 +10,7 @@ layout.config(function($routeProvider){
 		template:'<div ng-include="templateUrl">Loading...</div>',
 		controller:RouteCtrl
 	});
-	$routeProvider.otherwise({redirectTo:'/homepage',templateUrl:'app/home/homepage.html',controller:HomeCtrl});
+	$routeProvider.otherwise({redirectTo:'/homepage'});
 });
 
 function MainCtrl($scope,$http){
