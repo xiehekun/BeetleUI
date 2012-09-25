@@ -1,0 +1,8 @@
+[
+	{"name":"Home","url":"app/home/homepage.html","hashcode":"homepage"},
+	{"name":"Application","url":"app/application/application.html","hashcode":"application"},
+	{"name":"Catalog","url":"app/catalog/catalog.html","hashcode":"catalog"},
+	{"name":"Fault","url":"app/fault/fault.html","hashcode":"fault"},
+	{"name":"Resources","url":"app/resources/resources.html","hashcode":"resources"},
+	{"name":"System","url":"app/system/system.html","hashcode":"system"}
+]

@@ -2,19 +2,39 @@
  * @author jeff
  */
 
-angular.module('layout',[],function($routeProvider,$locationProvider){
-	$routeProvider.when('/application',{templateUrl:'app/application/application.html',controller:AppCtrl});
-	$routeProvider.when('/catalog',{templateUrl:'app/catalog/catalog.html',controller:CatalogCtrl});
-	$routeProvider.when('/resources',{templateUrl:'app/resources/resources.html',controller:ResCtrl});
-	$routeProvider.when('/fault',{templateUrl:'app/fault/fault.html',controller:FaultCtrl});
-	$routeProvider.when('/system',{templateUrl:'app/system/system.html',controller:SysCtrl});
-	$routeProvider.when('/home',{templateUrl:'app/home/homepage.html',controller:HomeCtrl});
-	$routeProvider.otherwise({redirectTo:'/home',templteUrl:'app/home/homepage.html',controller:HomeCtrl});
+var layout=angular.module('layout',[]);
+var hashrouter={};
+
+layout.config(function($routeProvider){
+	$routeProvider.when('/:hashcode',{
+		template:'<div ng-include="templateUrl">Loading...</div>',
+		controller:RouteCtrl
+	});
+	$routeProvider.otherwise({redirectTo:'/homepage',templateUrl:'app/home/homepage.html',controller:HomeCtrl});
 });
 
-function MainCtrl($scope,$location){
-	$scope.routeTo=function(uri){
-		$location.path(uri);
-	}
+function MainCtrl($scope,$http){
+	$http.get('config/menu.json').success(function(data){
+		var temp=[];
+		for(i=0,length=data.length;i<length;i++){
+			var menu=data.shift();
+			hashrouter[menu.hashcode]=menu.url;
+			temp.push(menu);
+		}
+  		$scope.menus =temp;
+  	});
+}
+
+function RouteCtrl($scope,$routeParams){
+	var url=hashrouter[$routeParams.hashcode];
+    if(url==undefined){
+        setTimeout(function(){
+            $scope.$apply(function(){
+                $scope.templateUrl=hashrouter[$routeParams.hashcode];
+            });
+        },200);
+    }else{
+        $scope.templateUrl=url;
+    }
 }
 
